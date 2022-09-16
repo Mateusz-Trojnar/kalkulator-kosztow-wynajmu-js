@@ -4,7 +4,7 @@ body {
 }
 
 .background {
-    background-image: url('../../Wypożyczalnia/images/tlo.jpg');
+    background-image: url('../images/tlo.jpg');
     background-repeat: no-repeat;
     height: 80vh;
     width: 100%;
