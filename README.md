@@ -1,2 +1,2 @@
-# zadanie wprowadzajace
+# kalkulator-kosztow-wynajmu-js
  
