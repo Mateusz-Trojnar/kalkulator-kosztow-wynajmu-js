@@ -61,9 +61,10 @@ function getCarRentCost() {
     return data
 }
 
-const data = getCarRentCost()
-
 document.querySelector("#submit").addEventListener("click", () => {
+
+    const data = getCarRentCost()
+
 
     if (data.newDrivingLicense < 5) {
 
