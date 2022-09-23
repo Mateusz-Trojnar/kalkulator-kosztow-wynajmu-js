@@ -8,23 +8,31 @@ const carInfo = [{
         model: "Hyundai",
         quantity: 8,
         category: "basic",
+        id: 0
     },
     {
         model: "Bmw",
         quantity: 5,
         category: "standard",
+        id: 1
     },
     {
         model: "Audi",
         quantity: 3,
         category: "medium",
+        id: 2
     },
     {
         model: "Porshe",
         quantity: 2,
         category: "premium",
+        id: 3
     },
 ];
+
+carInfo.forEach(element => {
+    document.querySelector("#car").innerHTML += `<option value="${element.id}">${element.model}</option>`
+});
 
 const vatValue = 1.23
 const percentageFromQuantity = 1.15
