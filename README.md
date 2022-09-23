@@ -8,3 +8,5 @@
  - CSS
  - JavaScript
  
+ Link do strony: [kalkulator-kosztow-najmu-js](https://mateusz-trojnar.github.io/kalkulator-kosztow-wynajmu-js/)
+ 
