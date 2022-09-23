@@ -1,2 +1,10 @@
 # kalkulator-kosztow-wynajmu-js
+ ```
+ Zadanie miało na celu sprawdzenie wiedzy w zakresie pisania stron.
+ Do wykonania dostałem stronę, której zadaniem było wyliczanie kosztów wynajmu samochodu.
+ Do wykonania zadania użyłem znajomości języków takich jak:
+ ```
+ - HTML
+ - CSS
+ - JavaScript
  
