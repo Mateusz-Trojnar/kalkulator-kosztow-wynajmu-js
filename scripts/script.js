@@ -4,6 +4,14 @@ const avgcombustion = 8.7
 const milliseconds = 86400000
 const currentYear = new Date().getFullYear()
 
+const pricecategory={
+    basic: 1,
+    standard: 1.3,
+    medium: 1.6,
+    premium: 2,
+    default: 1
+}
+
 const carInfo = [{
         model: "Hyundai",
         quantity: 8,
@@ -77,8 +85,11 @@ document.querySelector("#submit").addEventListener("click", () => {
     const data = getCarRentCost()
 
     if (data.kilometers.length == 0 || data.yearOfReceiptOfDrivingLicense.length == 0 || data.receptionCar.length == 0 || data.returnCar.length == 0) {
-        document.querySelector("#result").innerHTML = `Wypełnij wszystkie pola`
+        document.querySelector("#result").innerHTML = "Wypełnij wszystkie pola"
     } else {
+        if(data.result <1){
+            document.querySelector("#result").innerHTML = "Liczba dni wynajmu nie może być mniejsza od 0"
+        }else{
 
         if (data.newDrivingLicense < 5) {
 
@@ -88,19 +99,19 @@ document.querySelector("#submit").addEventListener("click", () => {
 
                 switch (data.categoryField) {
                     case 'basic':
-                        data.price *= 1
+                        data.price *= pricecategory.basic
                         break
                     case 'standard':
-                        data.price *= 1.3
+                        data.price *= pricecategory.standard
                         break
                     case 'medium':
-                        data.price *= 1.6
+                        data.price *= pricecategory.medium
                         break
                     case 'premium':
-                        data.price *= 2
+                        data.price *= pricecategory.premium
                         break
                     default:
-                        data.price *= 1
+                        data.price *= pricecategory.default
                 }
 
                 if (data.carModelQuantity > 3) {
@@ -113,7 +124,6 @@ document.querySelector("#submit").addEventListener("click", () => {
                     document.querySelector("#result").innerHTML = `Cena netto: ${nettoPrice.toFixed(2)} zł <br>Cena brutto: ${bruttoPrice.toFixed(2)} zł<br> W tym: koszty paliwa: ${data.fuelCost.toFixed(2)}zł, koszt wypożyczenia na ${data.result} dni: ${(nettoPrice - data.fuelCost).toFixed(2)}zł`
                 }
             }
-
         } else {
 
             if (data.newDrivingLicense < 3 && data.categoryField == "premium") {
@@ -122,19 +132,19 @@ document.querySelector("#submit").addEventListener("click", () => {
 
                 switch (data.categoryField) {
                     case 'basic':
-                        data.price *= 1
+                        data.price *= pricecategory.basic
                         break
                     case 'standard':
-                        data.price *= 1.3
+                        data.price *= pricecategory.standard
                         break
                     case 'medium':
-                        data.price *= 1.6
+                        data.price *= pricecategory.medium
                         break
                     case 'premium':
-                        data.price *= 2
+                        data.price *= pricecategory.premium
                         break
                     default:
-                        data.price *= 1
+                        data.price *= pricecategory.default
                 }
 
                 if (data.carModelQuantity > 3) {
@@ -150,4 +160,5 @@ document.querySelector("#submit").addEventListener("click", () => {
             }
         }
     }
+}
 })
