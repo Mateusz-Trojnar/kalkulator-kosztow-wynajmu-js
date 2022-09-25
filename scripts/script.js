@@ -114,11 +114,11 @@ document.querySelector("#submit").addEventListener("click", () => {
                         data.price *= pricecategory.default
                 }
 
-                if (data.carModelQuantity > 3) {
+                if (data.carModelQuantity >= 3) {
                     const nettoPrice = (data.result * priceForOneNight + data.price + data.fuelCost) * percentageFromDrivingLicense
                     const bruttoPrice = nettoPrice * vatValue
                     document.querySelector("#result").innerHTML = `Cena netto: ${nettoPrice.toFixed(2)} zł <br>Cena brutto: ${bruttoPrice.toFixed(2)} zł<br> W tym: koszty paliwa: ${data.fuelCost.toFixed(2)}zł, koszt wypożyczenia na ${data.result} dni: ${(nettoPrice - data.fuelCost).toFixed(2)}zł`
-                } else if (data.carModelQuantity <= 3) {
+                } else if (data.carModelQuantity < 3) {
                     const nettoPrice = ((data.result * priceForOneNight + data.price + data.fuelCost) * percentageFromDrivingLicense) * percentageFromQuantity
                     const bruttoPrice = nettoPrice * vatValue
                     document.querySelector("#result").innerHTML = `Cena netto: ${nettoPrice.toFixed(2)} zł <br>Cena brutto: ${bruttoPrice.toFixed(2)} zł<br> W tym: koszty paliwa: ${data.fuelCost.toFixed(2)}zł, koszt wypożyczenia na ${data.result} dni: ${(nettoPrice - data.fuelCost).toFixed(2)}zł`
@@ -147,11 +147,11 @@ document.querySelector("#submit").addEventListener("click", () => {
                         data.price *= pricecategory.default
                 }
 
-                if (data.carModelQuantity > 3) {
+                if (data.carModelQuantity >= 3) {
                     const nettoPrice = data.result * priceForOneNight + data.price + data.fuelCost
                     const bruttoPrice = nettoPrice * vatValue
                     document.querySelector("#result").innerHTML = `Cena netto: ${nettoPrice.toFixed(2)} zł <br>Cena brutto: ${bruttoPrice.toFixed(2)} zł<br> W tym: koszty paliwa: ${data.fuelCost.toFixed(2)}zł, koszt wypożyczenia na ${data.result} dni: ${(nettoPrice - data.fuelCost).toFixed(2)}zł`
-                } else if (data.carModelQuantity <= 3) {
+                } else if (data.carModelQuantity < 3) {
                     const nettoPrice = (data.result * priceForOneNight + data.price + data.fuelCost) * percentageFromQuantity
                     const bruttoPrice = nettoPrice * vatValue
                     document.querySelector("#result").innerHTML = `Cena netto: ${nettoPrice.toFixed(2)} zł <br>Cena brutto: ${bruttoPrice.toFixed(2)} zł<br> W tym: koszty paliwa: ${data.fuelCost.toFixed(2)}zł, koszt wypożyczenia na ${data.result} dni: ${(nettoPrice - data.fuelCost).toFixed(2)}zł`
