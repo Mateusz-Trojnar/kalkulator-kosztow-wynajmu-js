@@ -56,7 +56,7 @@ function getCarRentCost() {
     const newDrivingLicense = currentYear - yearOfReceiptOfDrivingLicense
 
     const kilometers = document.querySelector("#kilometers").value
-    const fuelCost = ((kilometers * avgcombustion) / fuelCostInPln)
+    const fuelCost = (kilometers/100) * avgcombustion * fuelCostInPln
     const receptionCar = document.querySelector("#reception").value
     const returnCar = document.querySelector("#return").value
     const rentFrom = new Date(receptionCar).getTime()
